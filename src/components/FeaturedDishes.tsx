@@ -1,49 +1,117 @@
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 
+// Import food images
+import sweetSourChickenImg from "@/assets/sweet-sour-chicken.jpg";
+import kungPaoChickenImg from "@/assets/kung-pao-chicken.jpg";
+import hakkaNoodlesImg from "@/assets/hakka-noodles.jpg";
+import manchurianDryImg from "@/assets/manchurian-dry.jpg";
+import friedRiceImg from "@/assets/fried-rice.jpg";
+import honeyChilliPotatoImg from "@/assets/honey-chilli-potato.jpg";
+import chilliChickenImg from "@/assets/chilli-chicken.jpg";
+import schezwanNoodlesImg from "@/assets/schezwan-noodles.jpg";
+import springRollsImg from "@/assets/spring-rolls.jpg";
+import mapoTofuImg from "@/assets/mapo-tofu.jpg";
+import hotSourSoupImg from "@/assets/hot-sour-soup.jpg";
+import dimSumImg from "@/assets/dim-sum.jpg";
+
 const FeaturedDishes = () => {
   const dishes = [
     {
       name: "Sweet & Sour Chicken",
       price: "₹280",
       description: "Crispy chicken with bell peppers in tangy sauce",
-      image: "data:image/svg+xml,%3Csvg width='300' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='14' text-anchor='middle' dy='.3em' fill='%236b7280'%3ESweet %26 Sour Chicken%3C/text%3E%3C/svg%3E",
+      image: sweetSourChickenImg,
+      category: "Chicken",
       popular: true
     },
     {
       name: "Kung Pao Chicken",
       price: "₹320",
       description: "Spicy chicken with peanuts and dried chilies",
-      image: "data:image/svg+xml,%3Csvg width='300' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='14' text-anchor='middle' dy='.3em' fill='%236b7280'%3EKung Pao Chicken%3C/text%3E%3C/svg%3E",
+      image: kungPaoChickenImg,
+      category: "Chicken",
       popular: false
+    },
+    {
+      name: "Chilli Chicken",
+      price: "₹300",
+      description: "Spicy boneless chicken in Indo-Chinese style",
+      image: chilliChickenImg,
+      category: "Chicken",
+      popular: true
     },
     {
       name: "Hakka Noodles",
       price: "₹180",
       description: "Stir-fried noodles with fresh vegetables",
-      image: "data:image/svg+xml,%3Csvg width='300' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='14' text-anchor='middle' dy='.3em' fill='%236b7280'%3EHakka Noodles%3C/text%3E%3C/svg%3E",
+      image: hakkaNoodlesImg,
+      category: "Noodles",
+      popular: true
+    },
+    {
+      name: "Schezwan Noodles",
+      price: "₹220",
+      description: "Spicy Sichuan style noodles with vegetables",
+      image: schezwanNoodlesImg,
+      category: "Noodles",
+      popular: true
+    },
+    {
+      name: "Fried Rice",
+      price: "₹200",
+      description: "Wok-fried rice with egg and vegetables",
+      image: friedRiceImg,
+      category: "Rice",
       popular: true
     },
     {
       name: "Manchurian Dry",
       price: "₹240",
       description: "Crispy vegetable balls in spicy sauce",
-      image: "data:image/svg+xml,%3Csvg width='300' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='14' text-anchor='middle' dy='.3em' fill='%236b7280'%3EManchurian Dry%3C/text%3E%3C/svg%3E",
+      image: manchurianDryImg,
+      category: "Vegetarian",
       popular: false
-    },
-    {
-      name: "Fried Rice",
-      price: "₹200",
-      description: "Wok-fried rice with egg and vegetables",
-      image: "data:image/svg+xml,%3Csvg width='300' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='14' text-anchor='middle' dy='.3em' fill='%236b7280'%3EFried Rice%3C/text%3E%3C/svg%3E",
-      popular: true
     },
     {
       name: "Honey Chilli Potato",
       price: "₹160",
       description: "Crispy potato strips with honey glaze",
-      image: "data:image/svg+xml,%3Csvg width='300' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='14' text-anchor='middle' dy='.3em' fill='%236b7280'%3EHoney Chilli Potato%3C/text%3E%3C/svg%3E",
+      image: honeyChilliPotatoImg,
+      category: "Vegetarian",
       popular: false
+    },
+    {
+      name: "Spring Rolls",
+      price: "₹140",
+      description: "Crispy golden vegetable rolls with dipping sauce",
+      image: springRollsImg,
+      category: "Appetizers",
+      popular: true
+    },
+    {
+      name: "Mapo Tofu",
+      price: "₹260",
+      description: "Sichuan style spicy tofu in aromatic sauce",
+      image: mapoTofuImg,
+      category: "Vegetarian",
+      popular: false
+    },
+    {
+      name: "Hot & Sour Soup",
+      price: "₹120",
+      description: "Traditional Chinese soup with tofu and mushrooms",
+      image: hotSourSoupImg,
+      category: "Soups",
+      popular: true
+    },
+    {
+      name: "Dim Sum Platter",
+      price: "₹350",
+      description: "Assorted steamed dumplings and buns",
+      image: dimSumImg,
+      category: "Appetizers",
+      popular: true
     }
   ];
 
@@ -66,11 +134,14 @@ const FeaturedDishes = () => {
                   alt={dish.name}
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
-                {dish.popular && (
-                  <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
-                    Popular
-                  </Badge>
-                )}
+                 {dish.popular && (
+                   <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
+                     Popular
+                   </Badge>
+                 )}
+                 <Badge className="absolute top-3 right-3 bg-secondary text-secondary-foreground">
+                   {dish.category}
+                 </Badge>
               </div>
               <CardContent className="p-6">
                 <div className="flex justify-between items-start mb-2">

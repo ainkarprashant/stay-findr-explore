@@ -1,7 +1,9 @@
 import { Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
   return (
     <header className="bg-card shadow-sm border-b">
       <div className="container mx-auto px-4">
@@ -38,8 +40,8 @@ const Header = () => {
           </div>
 
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#menu" className="text-foreground hover:text-primary transition-colors">Menu</a>
+            <Link to="/" className={`transition-colors ${location.pathname === '/' ? 'text-primary' : 'text-foreground hover:text-primary'}`}>Home</Link>
+            <Link to="/menu" className={`transition-colors ${location.pathname === '/menu' ? 'text-primary' : 'text-foreground hover:text-primary'}`}>Menu</Link>
             <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
           </nav>
